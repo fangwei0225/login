@@ -1,0 +1,45 @@
+server:
+  port: 8191
+  servlet:
+    context-path: /login
+
+spring:
+  profiles:
+    active: dev
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  #配置文件上传支持文件大小
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+#文件上传支持文件类型
+file:
+  upload:
+    acceptTypes: txt,jpg,jpeg,png,gif,svg,ico,doc,docx,xls,xlsx,ppt,pptx,pdf,flv,mp4,avi,rmvb
+
+#百度对象BOS服务器配置
+baidu:
+  bos:
+    accessKey: e7c5238eaf4442a9a094ece5a2dfebfc
+    secretKey: 21919ff06b4841ba8fb9470075176070
+    bucketName: td-mp-files
+    expireTime: 30000
+
+# 应用初始化参数配置
+system:
+  # 是否初始化系统默认角色(仅系统首次部署进行初始化)
+  init-roles: false
+  # session有效时长（分钟）
+  session-times: 43200
+  # 是否允许多设备登录
+  allow-multi-device-online: false
+  # 极光IOS推送环境
+  # true - 开启生产环境标识；false - 关闭生产环境标识
+  jpush-ios-prod-env: true

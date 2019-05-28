@@ -1,0 +1,28 @@
+#测试环境配置
+spring:
+  #redis连接配置
+  redis:
+    database: 16
+    host: 106.12.150.85
+    port: 6789
+    password: ai_redis
+    app: mp
+
+  #mysql数据库连接配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.12.150.238:3306/mp_test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: ai_test
+    password: _ai_test_2018super
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      auto-commit: true
+      #闲置的连接被清除时长
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      #最大生命周期
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1

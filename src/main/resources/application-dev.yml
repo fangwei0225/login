@@ -1,0 +1,28 @@
+#开发环境配置
+spring:
+  #redis连接配置
+  redis:
+    database: 15
+    host: 106.12.150.85
+    port: 6789
+    password: ai_redis
+    app: mp
+
+  #mysql数据库连接配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://180.76.54.70:3306/big_login?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: taoding
+    password: Tjdj(7uejk1$%2323
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      auto-commit: true
+      #闲置的连接被清除时长
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      #最大生命周期
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
